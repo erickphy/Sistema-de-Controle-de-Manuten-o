@@ -3,29 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Home</title>
+    <link rel="stylesheet" href="/parte2/style.css">
 </head>
 <body>
     <header>
-        <h1>Chamados</h1>
-        <nav>
-            <ul>
-                <li><a href="#index.html">Início</a></li>
-                <li><a href="servicos.html">Serviços</a></li>
-                <li><a href="chamado.html">Chamados</a></li>
-            </ul>
-        </nav>
+        <h1>Início</h1>
+        <div class="container">  
+            <nav>
+                <ul id="barra_navegacao">
+                    <li><a href="#index.html">Início</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="chamado.html">Chamados</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
+    <main id="conteudo_pag1">
         <h1>Seja Bem-Vindo(a)</h1>
+            <figure id="logo_projeto">
+            <img src="/parte1/logo_projeto.jpg" alt="Logo da empresa" height="100">
+        </figure>
         <p>Bem-vindo ao Sistema de Controle de Manutenção (SCM). Utilize o menu acima para navegar entre as páginas de serviços e chamados.</p>
         <p>A nossa empresa conta com profissionais de alta qualidade e capacitados a realizar manuntenção de Hardware e Software.</p>
-        <figure>
-            <img src="/parte1/logo-empresa.png" alt="Logo da empresa" height="300">
-        </figure>
+        <div class="video_container">
+            <h2>Veja um pouco mais dos serviços</h2>
+            <iframe width="500" height="300" 
+                src="https://www.youtube.com/embed/OT_5EjDfD6M?si=qsiDB5gu0P4Pr_5l" frameborder="0"
+                title="Manuntenção de Computadores"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+        </iframe>
+        </div>
     </main>
-    <footer>
+    <footer id="rodape_pag1">
         <p>Desenvolvido por José Ferreira, Matheus de Souza, José Eduardo, José Erick</p>
         <p>© 2025 Sistema de Controle de Manutenção</p>
     </footer>   
