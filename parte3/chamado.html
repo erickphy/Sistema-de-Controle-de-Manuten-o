@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Chamados</title>
     <link rel="stylesheet" href="/parte2/style.css">
 </head>
 <body>
@@ -12,8 +12,8 @@
         <div class="container">  
             <nav>
                 <ul id="barra_navegacao">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="/parte1/index.html">Início</a></li>
+                    <li><a href="/parte1/servicos.html">Serviços</a></li>
                     <li><a href="#chamado.html">Chamados</a></li>
                 </ul>
             </nav>
@@ -28,6 +28,9 @@
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
 
+            <label for="telefone">Telefone:</label><br>
+            <input type="tel" id="telefone" name="telefone" required><br><br>
+
             <label for="servico">Serviço:</label><br>
             <select id="servico" name="servico" required>
                 <option value="hardware">Instalação de Hardware</option>
@@ -38,7 +41,14 @@
             <label for="descricao">Descrição do Problema:</label><br>
             <textarea id="descricao" name="descricao" rows="4" cols="50" required></textarea><br><br>
 
-            <input type="submit" value="Enviar Chamado">
+            <div class="urgencia-group">
+                <label class="checkbox-label">
+                    <input type="radio" id="muito-urgente" name="urgencia" value="muito" required>Muito urgente</label>
+                <label class="checkbox-label">
+                    <input type="radio" id="pouco-urgente" name="urgencia" value="pouco">Pouco urgente</label>
+            </div><br>
+
+            <button type="submit">Enviar Chamado</button>
 
         </form>
     </main>
