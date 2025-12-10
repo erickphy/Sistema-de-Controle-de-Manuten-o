@@ -165,3 +165,9 @@ a {
   width: 98%;
   text-align:center;
 }
+
+#bt-voltar {
+  text-align: center;
+  padding: 10px 0px;
+  margin-top: 20px;
+}
