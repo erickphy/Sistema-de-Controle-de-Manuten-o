@@ -37,10 +37,21 @@ main {
   width: 100%;
 }
 
+header .container {
+  max-width: none;
+  padding: 0;
+  margin: 0;
+  width: auto;
+}
+
+header h1 {
+  color: var(--cor-texto-claro);
+}
+
 .container nav {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
 .container nav ul {
@@ -70,13 +81,17 @@ main {
 header {
   background-color: var(--cor-primaria);
   color: var(--cor-texto-claro);
-  padding: 20px 0;
+  padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header h1 {
-  text-align: center;
-  margin-bottom: 15px;
+  margin: 0;
+  font-size: 24px;
+  flex-shrink: 0;
 }
 
 footer {
