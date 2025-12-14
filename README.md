@@ -6,7 +6,7 @@ Projeto desenvolvido para a disciplina de Desenvolvimento WEB (Professor JOHN), 
 
 O SCM é um site estático (HTML/CSS) que simula a interface de uma empresa de manutenção de tecnologia. O site permite que usuários visualizem serviços e abram chamados de manutenção.
 
-**Link do Site (GitHub Pages):** https://docs.github.com/pt/pages/getting-started-with-github-pages/creating-a-github-pages-site
+**Link do Site (GitHub Pages):** https://erickphy.github.io/Sistema-de-Controle-de-Manuten-o/index.html
 
 ## 2. 🛠️ Tecnologias Utilizadas
 
