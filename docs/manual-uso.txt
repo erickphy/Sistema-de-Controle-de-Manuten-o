@@ -75,6 +75,15 @@ Opção online:
 - Botão "Comprar" adiciona item ao carrinho (localStorage)
 - Ícone fixo de carrinho com contador (CSS) e modal do carrinho para revisar/remover itens
 
+COMO USAR A LOJA:
+  1. Clique em "Loja" no menu de navegação
+  2. Navegue pelos produtos disponíveis
+  3. Use os filtros no lado esquerdo para buscar por categoria
+  4. Clique em "Comprar" no produto desejado
+  5. O item será adicionado ao carrinho (ícone no canto superior direito)
+  6. Clique no ícone do carrinho para revisar seus itens
+  7. Clique em "Finalizar Compra" para prosseguir ao checkout
+
 5. NAVEGAÇÃO
 -------------
 - Barra consistente em todas as páginas: Início | Serviços | Loja | Chamados
@@ -91,22 +100,54 @@ Redes sociais:
 
 7. CHECKOUT E FLUXO DE COMPRA (SIMULADO)
 --------------------------------------
-- O site contém um fluxo de checkout simulado (front-end) com páginas `checkout.html` e `obrigado.html`.
-- Os itens do carrinho são armazenados em `localStorage` (`scm_cart_items`).
-- Para pagamentos reais, é necessário integrar um backend (Node.js/Express) e um gateway (Stripe ou PayPal). Recomenda-se configurar chaves em `.env` e testar em modo teste antes de produção.
+PASSO A PASSO DO CHECKOUT:
+  1. Após adicionar produtos, clique no ícone de carrinho
+  2. Revise os itens, quantidades e preços
+  3. Remova itens se necessário clicando no botão de remoção
+  4. Clique em "Finalizar Compra" para ir ao checkout
+  5. Preencha seus dados pessoais (nome, email, endereço, etc.)
+  6. Escolha o método de pagamento (simulado)
+  7. Confirme o pedido
+  8. Você receberá uma página de confirmação com número do pedido
+
+INFORMAÇÕES TÉCNICAS:
+- Os itens do carrinho são armazenados em `localStorage` (`scm_cart_items`)
+- O fluxo é simulado (front-end) - não há cobranças reais
+- Os dados do pedido não são salvos permanentemente
+- Para integração com pagamento real, é necessário integrar um backend (Node.js/Express) e um gateway de pagamento (Stripe ou PayPal)
+- Recomenda-se configurar chaves de API em arquivo `.env` e testar em modo sandbox antes de produção
 
 8. TREINAMENTO DO CHATBOT (CHATLING)
 ----------------------------------
-Passos recomendados para treinar o chatbot:
-1. Crie conta em https://chatling.ai
-2. No painel, vá em "Data Sources" e envie `docs/manual-uso.pdf` ou cole o conteúdo de `docs/manual-uso.txt`.
-3. Treine o agente com esse Data Source.
-4. Em "Embed" gere o script e cole-o antes do `</body>` em todas as páginas para ativar o balão de chat.
+O CHATBOT ESTÁ DESATIVADO ATUALMENTE. Para ativar suporte via chat de IA:
 
-Boas práticas para o manual usado no treinamento:
-- Forneça texto pesquisável (não imagens)
-- Divida em seções e FAQs claras
-- Atualize preços/contatos antes do upload
+PASSOS PARA ATIVAR O CHATBOT:
+1. Acesse https://chatling.ai e crie uma conta
+2. No painel de controle, clique em "New Chatbot"
+3. Vá em "Data Sources" (Fontes de Dados)
+4. Envie o arquivo `docs/manual-uso.txt` ou copie e cole o conteúdo completo do manual
+5. Clique em "Train" para treinar o chatbot com essas informações
+6. Vá em "Settings" e ajuste o nome e avatar do bot (ex.: "InfoTech Support")
+7. Em "Embed", copie o script HTML fornecido
+8. Cole o script antes da tag `</body>` em TODAS as páginas HTML (index.html, loja.html, chamado.html, servicos.html, checkout.html, obrigado.html)
+9. Salve e publique as alterações
+10. O balão de chat deve aparecer no canto inferior direito de todas as páginas
+
+BOAS PRÁTICAS PARA O CHATBOT:
+- Forneça texto claro e pesquisável (não use apenas imagens)
+- Divida informações em seções e FAQs bem estruturadas
+- Atualize preços, contatos e horários antes de fazer upload do manual
+- Teste o chatbot em diferentes páginas e dispositivos
+- Monitore perguntas frequentes e atualize o manual conforme necessário
+- Responda mensagens dos usuários regularmente (o Chatling permite ver conversas no painel)
+
+PERGUNTAS QUE O CHATBOT DEVE RESPONDER:
+- "Quais serviços vocês oferecem?"
+- "Como abro um chamado?"
+- "Como compro na loja?"
+- "Qual é o horário de atendimento?"
+- "Como faço para entrar em contato?"
+- "Vocês vendem placas de vídeo?"
 
 9. FAQ (Perguntas Frequentes)
 ----------------------------
@@ -118,10 +159,3 @@ A: Acesse `chamado.html`, preencha o formulário e envie. Resposta: 4h (muito ur
 
 Q: Como finalizo a compra?
 A: No modal do carrinho clique em "Finalizar Compra" e siga para `checkout.html`. Atualmente é simulado; para pagamento real, integre Stripe/PayPal.
-
-10. HISTÓRICO DE VERSÕES
-------------------------
-- 2025-12 — Versão inicial (documento fornecido pelos autores)
-- 2026-01-05 — Atualização: adicionado Loja, Checkout simulado, instruções Chatling
-
-Contato para atualização do manual: jose.silva.42@academico.ifpb.edu.br
