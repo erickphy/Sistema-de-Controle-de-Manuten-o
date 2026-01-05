@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout - InfoTech</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Checkout</h1>
+    <div class="container">
+      <nav>
+        <ul id="barra_navegacao">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="servicos.html">Serviços</a></li>
+          <li><a href="loja.html">Loja</a></li>
+          <li><a href="chamado.html">Chamados</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="checkout-section">
+      <h2>Revisar Pedido</h2>
+      <ul id="checkout-items" class="cart-items"></ul>
+      <p class="cart-total">Total: <strong id="checkout-total">R$ 0,00</strong></p>
+      <button id="place-order" class="btn-comprar">Finalizar Pedido (Simulado)</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Sistema de Controle de Manutenção</p>
+  </footer>
+
+  <script src="js/shop.js"></script>
+  <script>
+    // populate checkout page using localStorage
+    document.addEventListener('DOMContentLoaded', function(){
+      const items = JSON.parse(localStorage.getItem('scm_cart_items')||'[]');
+      const list = document.getElementById('checkout-items');
+      const totalEl = document.getElementById('checkout-total');
+      function formatBRL(n){ return 'R$ '+n.toFixed(2).replace('.',','); }
+      let total = 0;
+      items.forEach((it, i)=>{
+        const li = document.createElement('li');
+        li.textContent = `${it.name} — ${formatBRL(it.price)}`;
+        list.appendChild(li);
+        total += Number(it.price);
+      });
+      totalEl.textContent = formatBRL(total);
+
+      document.getElementById('place-order').addEventListener('click', function(){
+        // simulate order: save order and clear cart
+        const order = { id: 'ORD'+Date.now(), items, total };
+        localStorage.setItem('scm_last_order', JSON.stringify(order));
+        localStorage.removeItem('scm_cart_items');
+        localStorage.setItem('scm_cart_count','0');
+        window.location.href = 'obrigado.html';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+SISTEMA DE CONTROLE DE MANUTENÇÃO (SCM) - MANUAL DE USO
+======================================================
+
+Desenvolvido para a disciplina de Desenvolvimento WEB (Professor JOHN)
+3º ano INTIN - IFPB
+
+Autores: José Ferreira, José Erick, José Eduardo, Matheus de Souza
+Versão: 1.1
+Data: 2026-01-05
+
+ÍNDICE
+------
+1. Introdução
+2. Requisitos do Sistema
+3. Como Acessar o Sistema
+4. Descrição das Telas
+	4.1 Tela Inicial (Início)
+	4.2 Tela de Serviços
+	4.3 Tela de Chamados
+	4.4 Loja Virtual (Vitrine)
+5. Navegação
+6. Suporte
+7. Checkout e Fluxo de Compra (Simulado)
+8. Treinamento do Chatbot (Chatling)
+9. FAQ
+10. Histórico de versões
+
+1. INTRODUÇÃO
+------------
+O Sistema de Controle de Manutenção (SCM) é uma plataforma web estática que simula a interface de uma empresa de manutenção de tecnologia. O sistema permite que usuários visualizem os serviços oferecidos, abram chamados de manutenção e comprem produtos na loja virtual.
+
+Áreas de atuação:
+- Instalação de Hardware
+- Instalação de Software
+- Instalação de Redes
+
+2. REQUISITOS DO SISTEMA
+------------------------
+- Navegador web moderno (Chrome, Firefox, Edge, Safari)
+- Conexão com internet para vídeos e embeds
+- Tela com resolução mínima de 768px (site responsivo)
+
+3. COMO ACESSAR O SISTEMA
+-------------------------
+Opção local:
+1. Clone o repositório Git
+2. Abra a pasta do projeto
+3. Sirva com um servidor local (recomendado) e acesse `index.html`
+
+Opção online:
+1. Publique no GitHub Pages ou outro host e acesse a URL pública.
+
+4. DESCRIÇÃO DAS TELAS
+----------------------
+4.1 Tela Inicial (index.html)
+- Cabeçalho com título e navegação
+- Logo da InfoTech
+- Texto de boas-vindas e vídeo incorporado
+- Rodapé com autores e copyright
+
+4.2 Tela de Serviços (servicos.html)
+- Mostra cards para: Instalação de Hardware, Instalação de Software, Instalação de Redes
+- Cada card contém: título, técnico, imagem, descrição, link Instagram e vídeo
+
+4.3 Tela de Chamados (chamado.html)
+- Formulário para abrir chamado com campos: nome, email, telefone, serviço, descrição, urgência
+- Validações: campos obrigatórios, email válido, telefone com DDD
+- Fluxo: envio do formulário (atualmente front-end)
+
+4.4 Loja Virtual (loja.html)
+- Layout em duas colunas: `aside.filtros` (sticky) e `.vitrine` (grid responsivo)
+- Produtos exibidos como `article.product-card` com imagem, nome, preço antigo (riscado) e preço atual
+- Badges visuais criados via `::before` (ex.: Lançamento, Poucas Unidades)
+- Filtros por categoria (multi-select) e botão limpar filtros
+- Botão "Comprar" adiciona item ao carrinho (localStorage)
+- Ícone fixo de carrinho com contador (CSS) e modal do carrinho para revisar/remover itens
+
+5. NAVEGAÇÃO
+-------------
+- Barra consistente em todas as páginas: Início | Serviços | Loja | Chamados
+- Use os links do rodapé para contato e redes dos técnicos
+
+6. SUPORTE
+-----------
+Email de suporte: jose.silva.42@academico.ifpb.edu.br
+Redes sociais:
+- Eduardo: instagram.com/jose_eduardofts
+- Erick: instagram.com/j_erick_lira
+- José: instagram.com/10.josebr
+- Matheus: instagram.com/matheus.zt_
+
+7. CHECKOUT E FLUXO DE COMPRA (SIMULADO)
+--------------------------------------
+- O site contém um fluxo de checkout simulado (front-end) com páginas `checkout.html` e `obrigado.html`.
+- Os itens do carrinho são armazenados em `localStorage` (`scm_cart_items`).
+- Para pagamentos reais, é necessário integrar um backend (Node.js/Express) e um gateway (Stripe ou PayPal). Recomenda-se configurar chaves em `.env` e testar em modo teste antes de produção.
+
+8. TREINAMENTO DO CHATBOT (CHATLING)
+----------------------------------
+Passos recomendados para treinar o chatbot:
+1. Crie conta em https://chatling.ai
+2. No painel, vá em "Data Sources" e envie `docs/manual-uso.pdf` ou cole o conteúdo de `docs/manual-uso.txt`.
+3. Treine o agente com esse Data Source.
+4. Em "Embed" gere o script e cole-o antes do `</body>` em todas as páginas para ativar o balão de chat.
+
+Boas práticas para o manual usado no treinamento:
+- Forneça texto pesquisável (não imagens)
+- Divida em seções e FAQs claras
+- Atualize preços/contatos antes do upload
+
+9. FAQ (Perguntas Frequentes)
+----------------------------
+Q: Vocês vendem placas de vídeo?
+A: Sim, dependendo do estoque. Consulte a loja.
+
+Q: Como abrir um chamado?
+A: Acesse `chamado.html`, preencha o formulário e envie. Resposta: 4h (muito urgente) / 24h (pouco urgente).
+
+Q: Como finalizo a compra?
+A: No modal do carrinho clique em "Finalizar Compra" e siga para `checkout.html`. Atualmente é simulado; para pagamento real, integre Stripe/PayPal.
+
+10. HISTÓRICO DE VERSÕES
+------------------------
+- 2025-12 — Versão inicial (documento fornecido pelos autores)
+- 2026-01-05 — Atualização: adicionado Loja, Checkout simulado, instruções Chatling
+
+Contato para atualização do manual: jose.silva.42@academico.ifpb.edu.br

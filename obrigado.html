@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Obrigado - InfoTech</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Obrigado pela sua compra!</h1>
+  </header>
+  <main class="container">
+    <section>
+      <h2>Resumo do Pedido</h2>
+      <div id="order-summary"></div>
+      <p>Um e-mail de confirmação será enviado (simulado).</p>
+      <p><a href="loja.html" class="btn-comprar">Voltar à Loja</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Sistema de Controle de Manutenção</p>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const order = JSON.parse(localStorage.getItem('scm_last_order')||'null');
+      const out = document.getElementById('order-summary');
+      if(!order){ out.innerHTML = '<p>Nenhum pedido encontrado.</p>'; return; }
+      const el = document.createElement('div');
+      el.innerHTML = `<p><strong>ID:</strong> ${order.id}</p><p><strong>Total:</strong> R$ ${Number(order.total).toFixed(2).replace('.',',')}</p>`;
+      const ul = document.createElement('ul');
+      order.items.forEach(it=>{ const li=document.createElement('li'); li.textContent = `${it.name} — R$ ${Number(it.price).toFixed(2).replace('.',',')}`; ul.appendChild(li); });
+      out.appendChild(el); out.appendChild(ul);
+    });
+  </script>
+</body>
+</html>
