@@ -471,7 +471,6 @@ main {
 .product-card .price .old { text-decoration: line-through; color: #999; margin-right: 8px; }
 .product-card .price .new { color: var(--cor-primaria); font-weight: 700; font-size: 1.1rem; }
 
-/* badges usando ::before (sem alterar HTML) */
 .product-card[data-badge]::before {
   content: attr(data-badge);
   position: absolute;
@@ -486,7 +485,6 @@ main {
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
-/* botão comprar com micro-interações e animação no hover */
 .btn-comprar {
   width: 100%;
   padding: 10px 12px;
@@ -507,7 +505,6 @@ main {
   100% { box-shadow: 0 0 0 0 rgba(255,0,0,0); }
 }
 
-/* ícone de carrinho fixo com contador usando CSS puro */
 #cart-icon {
   position: fixed;
   right: 18px;
@@ -525,7 +522,7 @@ main {
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
-#cart-icon::before { content: '\1F6D2'; /* shopping cart unicode */ font-size: 22px; }
+#cart-icon::before { content: '\1F6D2'; font-size: 22px; }
 #cart-icon::after {
   content: attr(data-count);
   position: absolute;
@@ -545,16 +542,13 @@ main {
   .filtros { position: relative; top: 0; }
 }
 
-/* filter buttons */
 .filters-list { display:flex; flex-direction:column; gap:8px; }
 .filter-item { display:flex; align-items:center; gap:10px; font-weight:600; padding:6px 8px; border-radius:6px; }
 .filter-item input[type="checkbox"] { width:18px; height:18px; accent-color: var(--cor-primaria); }
 .filter-clear { margin-top:6px; background:transparent; border:1px solid #ddd; padding:6px 8px; border-radius:6px; cursor:pointer; }
 
-/* hide products when filtered */
 .product-hidden { display: none !important; }
 
-/* cart icon pop animation and toast */
 #cart-icon.pop { transform: scale(1.08); transition: transform .15s ease; }
 
 .shop-toast {
@@ -573,7 +567,6 @@ main {
 }
 .shop-toast.visible { opacity: 1; transform: translateY(0); }
 
-/* Cart modal styles */
 .cart-modal { position: fixed; inset: 0; display:flex; align-items:flex-end; justify-content:flex-end; padding: 24px; z-index: 100000; }
 .cart-modal.hidden { display: none; }
 .cart-inner { width: 360px; max-width: 100%; background: var(--cor-fundo-card); border-radius: 12px; padding: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.25); }

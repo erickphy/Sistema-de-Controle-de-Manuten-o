@@ -31,15 +31,15 @@
                 <label class="filter-item"><input type="checkbox" class="filter-checkbox" data-category="Periféricos"> Periféricos</label>
                 <div style="margin-top:10px;"><button id="clear-filters" class="filter-clear">Limpar filtros</button></div>
             </div>
+            <br>
             <h3>Filtrar por</h3>
             <label><input type="checkbox"> Promoções</label><br>
             <label><input type="checkbox"> Lançamentos</label>
         </aside>
 
         <section class="vitrine">
-            <!-- Product cards: use data-badge to show badges via ::before -->
             <article class="product-card" data-badge="LANÇAMENTO" data-category="Hardware">
-                <img src="assets/Png.png" alt="Produto 1"/>
+                <img src="assets/RTX 4060.png" alt="Produto 1"/>
                 <h3>RTX 4060</h3>
                 <p class="price"><span class="old">R$ 4.999,00</span> <span class="new">R$ 3.799,00</span></p>
                 <button class="btn-comprar" data-name="RTX 4060" data-price="3799.00">Comprar</button>
@@ -81,10 +81,8 @@
             </article>
         </section>
 
-        <!-- ícone fixo do carrinho com contador (CSS puro usa attr(data-count)) -->
         <div id="cart-icon" data-count="0" aria-hidden="true" title="Carrinho"></div>
 
-        <!-- Modal do carrinho -->
         <div id="cart-modal" class="cart-modal hidden" aria-hidden="true">
             <div class="cart-inner">
                 <button class="cart-close" aria-label="Fechar">×</button>
@@ -101,9 +99,6 @@
     <footer>
         <p>© 2025 Sistema de Controle de Manutenção</p>
     </footer>
-
-    <!-- CHATLING EMBED: cole aqui o script gerado pelo Chatling.ai após criar a conta e treinar o agente -->
-    <!-- Upload do manual: envie o arquivo docs/manual-uso.pdf no painel "Data Sources" do Chatling -->
 
     <script src="js/shop.js"></script>
 
